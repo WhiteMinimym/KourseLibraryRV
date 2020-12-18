@@ -32,6 +32,10 @@ namespace KourseLibraryRV
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -53,17 +57,14 @@ namespace KourseLibraryRV
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -119,9 +120,44 @@ namespace KourseLibraryRV
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(767, 408);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Выдача";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(78, 299);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 23;
+            this.button4.Text = "Склад";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 228);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(328, 13);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Введите в форму ниже оставшееся количество книг на складе";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(217, 264);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(75, 264);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 13);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Осталось книг";
             // 
             // button3
             // 
@@ -291,6 +327,7 @@ namespace KourseLibraryRV
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.dataGridView1);
@@ -301,8 +338,27 @@ namespace KourseLibraryRV
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(767, 408);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Прочее";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(38, 38);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "Топ читатели";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(157, 38);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Вывести";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // dataGridView1
             // 
@@ -327,7 +383,7 @@ namespace KourseLibraryRV
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(346, 67);
+            this.button2.Location = new System.Drawing.Point(122, 72);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -338,65 +394,21 @@ namespace KourseLibraryRV
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(189, 72);
+            this.label9.Location = new System.Drawing.Point(38, 72);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Должники";
             // 
-            // label12
+            // button6
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(75, 264);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(82, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "Осталось книг";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(217, 264);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 21;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 228);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(328, 13);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Введите в форму ниже оставшееся количество книг на складе";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(78, 299);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 23;
-            this.button4.Text = "Склад";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(346, 28);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Вывести";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(189, 38);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 13);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "Топ читатели";
+            this.button6.Location = new System.Drawing.Point(457, 67);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(294, 23);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Выдача книг за всё время";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // WydachaKnig
             // 
@@ -457,5 +469,6 @@ namespace KourseLibraryRV
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

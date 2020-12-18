@@ -144,5 +144,13 @@ namespace KourseLibraryRV
             TopReaders show = new TopReaders();
             show.ShowDialog();
         }
+
+       
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            AllDiagramm show = new AllDiagramm();
+            show.ShowDialog();
+        }
     }
 }

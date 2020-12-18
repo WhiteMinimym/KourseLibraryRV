@@ -18,7 +18,7 @@ namespace KourseLibraryRV
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainLIbraryPart());
             
-           
+           //Синий
 
         }
     }
