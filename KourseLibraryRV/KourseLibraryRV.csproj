@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A90466D-5F45-4064-A6F3-6AAB081DC29F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KourseLibraryRV</RootNamespace>
+    <AssemblyName>KourseLibraryRV</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnterLikeAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterLikeAdmin.Designer.cs">
+      <DependentUpon>EnterLikeAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterLikeAdminReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterLikeAdminReg.Designer.cs">
+      <DependentUpon>EnterLikeAdminReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterLikeUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterLikeUser.Designer.cs">
+      <DependentUpon>EnterLikeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KourseWorkDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KourseWorkDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MainLIbraryPart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainLIbraryPart.Designer.cs">
+      <DependentUpon>MainLIbraryPart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Readers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Readers.Designer.cs">
+      <DependentUpon>Readers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrPeople.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrPeople.Designer.cs">
+      <DependentUpon>RegistrPeople.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sklad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sklad.Designer.cs">
+      <DependentUpon>Sklad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableShow_Katalog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableShow_Katalog.Designer.cs">
+      <DependentUpon>TableShow_Katalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableShow_Katalog_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableShow_Katalog_Admin.Designer.cs">
+      <DependentUpon>TableShow_Katalog_Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EnterLikeUserReg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnterLikeUserReg.Designer.cs">
+      <DependentUpon>EnterLikeUserReg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopReaders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopReaders.Designer.cs">
+      <DependentUpon>TopReaders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersInfo.Designer.cs">
+      <DependentUpon>UsersInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WydachaKnig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WydachaKnig.Designer.cs">
+      <DependentUpon>WydachaKnig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WydachaKnigAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WydachaKnigAdmin.Designer.cs">
+      <DependentUpon>WydachaKnigAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Выдача книг.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Выдача книг.Designer.cs">
+      <DependentUpon>Выдача книг.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EnterLikeAdmin.resx">
+      <DependentUpon>EnterLikeAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterLikeAdminReg.resx">
+      <DependentUpon>EnterLikeAdminReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterLikeUser.resx">
+      <DependentUpon>EnterLikeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainLIbraryPart.resx">
+      <DependentUpon>MainLIbraryPart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Readers.resx">
+      <DependentUpon>Readers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrPeople.resx">
+      <DependentUpon>RegistrPeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sklad.resx">
+      <DependentUpon>Sklad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableShow_Katalog.resx">
+      <DependentUpon>TableShow_Katalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableShow_Katalog_Admin.resx">
+      <DependentUpon>TableShow_Katalog_Admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EnterLikeUserReg.resx">
+      <DependentUpon>EnterLikeUserReg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopReaders.resx">
+      <DependentUpon>TopReaders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersInfo.resx">
+      <DependentUpon>UsersInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WydachaKnig.resx">
+      <DependentUpon>WydachaKnig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WydachaKnigAdmin.resx">
+      <DependentUpon>WydachaKnigAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Выдача книг.resx">
+      <DependentUpon>Выдача книг.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="KourseWorkDataSet.xsc">
+      <DependentUpon>KourseWorkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KourseWorkDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KourseWorkDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KourseWorkDataSet.xss">
+      <DependentUpon>KourseWorkDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
