@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,21 @@ namespace KourseLibraryRV
 {
     public partial class AllDiagramm : Form
     {
+        SqlConnection SqlConnection = null;
         public AllDiagramm()
         {
             InitializeComponent();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AllDiagramm_Load(object sender, EventArgs e)
+        {
+            SqlConnection sqlConnection = new SqlConnection(@"Data Source=MAHNITSKIY-PC;Initial Catalog=KourseWork;Integrated Security=True");
+            sqlConnection.Open();
         }
     }
 }

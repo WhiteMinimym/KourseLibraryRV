@@ -76,6 +76,7 @@ namespace KourseLibraryRV
             this.Controls.Add(this.dataGridView1);
             this.Name = "TopReaders";
             this.Text = "TopReaders";
+            this.Load += new System.EventHandler(this.TopReaders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

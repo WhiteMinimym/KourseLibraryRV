@@ -155,6 +155,9 @@
     <Compile Include="Выдача книг.Designer.cs">
       <DependentUpon>Выдача книг.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AllDiagramm.resx">
+      <DependentUpon>AllDiagramm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EnterLikeAdmin.resx">
       <DependentUpon>EnterLikeAdmin.cs</DependentUpon>
     </EmbeddedResource>
