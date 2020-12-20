@@ -29,6 +29,7 @@ namespace KourseLibraryRV
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -60,15 +61,17 @@ namespace KourseLibraryRV
             this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.kourseWorkDataSet = new KourseLibraryRV.KourseWorkDataSet();
+            this.katalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.katalogTableAdapter = new KourseLibraryRV.KourseWorkDataSetTableAdapters.KatalogTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.katalogBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -328,10 +331,10 @@ namespace KourseLibraryRV
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.button6);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -344,7 +347,7 @@ namespace KourseLibraryRV
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(457, 67);
+            this.button6.Location = new System.Drawing.Point(29, 181);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(294, 23);
             this.button6.TabIndex = 25;
@@ -371,27 +374,6 @@ namespace KourseLibraryRV
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Location = new System.Drawing.Point(41, 119);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(524, 221);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ReadCardNum";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "FIO";
-            this.Column2.Name = "Column2";
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(122, 72);
@@ -411,6 +393,30 @@ namespace KourseLibraryRV
             this.label9.TabIndex = 0;
             this.label9.Text = "Должники";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(29, 258);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(294, 23);
+            this.button7.TabIndex = 26;
+            this.button7.Text = "Топ книга за всё время";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // kourseWorkDataSet
+            // 
+            this.kourseWorkDataSet.DataSetName = "KourseWorkDataSet";
+            this.kourseWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // katalogBindingSource
+            // 
+            this.katalogBindingSource.DataMember = "Katalog";
+            this.katalogBindingSource.DataSource = this.kourseWorkDataSet;
+            // 
+            // katalogTableAdapter
+            // 
+            this.katalogTableAdapter.ClearBeforeFill = true;
+            // 
             // WydachaKnig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,7 +433,8 @@ namespace KourseLibraryRV
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.katalogBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,15 +462,12 @@ namespace KourseLibraryRV
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button4;
@@ -471,5 +475,9 @@ namespace KourseLibraryRV
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private KourseWorkDataSet kourseWorkDataSet;
+        private System.Windows.Forms.BindingSource katalogBindingSource;
+        private KourseWorkDataSetTableAdapters.KatalogTableAdapter katalogTableAdapter;
     }
 }

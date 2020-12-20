@@ -60,6 +60,18 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doljniki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doljniki.Designer.cs">
+      <DependentUpon>Doljniki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TopBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopBook.Designer.cs">
+      <DependentUpon>TopBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vudano_Vsiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +181,12 @@
     <Compile Include="Выдача книг.Designer.cs">
       <DependentUpon>Выдача книг.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Doljniki.resx">
+      <DependentUpon>Doljniki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopBook.resx">
+      <DependentUpon>TopBook.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vudano_Vsiem.resx">
       <DependentUpon>Vudano_Vsiem.cs</DependentUpon>
     </EmbeddedResource>

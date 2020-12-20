@@ -11,21 +11,19 @@ using System.Windows.Forms;
 
 namespace KourseLibraryRV
 {
-    
-    public partial class TableShow_Katalog : Form
+    public partial class TopBook : Form
     {
-        public TableShow_Katalog()
+        public TopBook()
         {
             InitializeComponent();
-            LoadData();
         }
 
-        private void LoadData()
+        private void TopBook_Load(object sender, EventArgs e)
         {
             string connectString = @"Data Source=MAHNITSKIY-PC;Initial Catalog=KourseWork;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(connectString);
             myConnection.Open();
-            string query = "SELECT * FROM Katalog ";
+            string query = "SELECT k.LibNBook,BookName FROM Katalog k WHERE k.LibNBook=(SELECT TOP(1) LibNBook FROM Vudachia ) ";
             SqlCommand command = new SqlCommand(query, myConnection);
             SqlDataReader reader = command.ExecuteReader();
 
@@ -33,15 +31,11 @@ namespace KourseLibraryRV
 
             while (reader.Read())
             {
-                data.Add(new string[7]);
+                data.Add(new string[2]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
-                data[data.Count - 1][2] = reader[2].ToString();
-                data[data.Count - 1][3] = reader[3].ToString();
-                data[data.Count - 1][4] = reader[4].ToString();
-                data[data.Count - 1][5] = reader[5].ToString();
-                data[data.Count - 1][6] = reader[6].ToString();
+
             }
 
             reader.Close();
@@ -50,15 +44,6 @@ namespace KourseLibraryRV
                 dataGridView1.Rows.Add(s);
         }
 
-      
-        private void TableShow_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -14,8 +14,8 @@ namespace KourseLibraryRV
     public partial class WydachaKnig : Form
     {
         private SqlConnection sqlConnection = null;
-       // private SqlCommand SqlCommand = null;
-        
+        // private SqlCommand SqlCommand = null;
+
         public WydachaKnig()
         {
             InitializeComponent();
@@ -23,8 +23,10 @@ namespace KourseLibraryRV
 
         private async void WydachaKnig_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "kourseWorkDataSet.Katalog". При необходимости она может быть перемещена или удалена.
+            this.katalogTableAdapter.Fill(this.kourseWorkDataSet.Katalog);
             sqlConnection = new SqlConnection(@"Data Source=MAHNITSKIY-PC;Initial Catalog=KourseWork;Integrated Security=True");
-            
+
             await sqlConnection.OpenAsync();
         }
 
@@ -106,31 +108,8 @@ namespace KourseLibraryRV
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string query = "SELECT ReadCardNum, FIO FROM Readers  WHERE ReadCardNum = (SELECT ReadCardNum FROM Vudachia  WHERE RealDateBack IS NULL) ";
-
-            SqlCommand command = new SqlCommand(query, sqlConnection);
-            SqlDataReader reader = command.ExecuteReader();
-
-            List<string[]> data = new List<string[]>();
-
-            while (reader.Read())
-            {
-                data.Add(new string[1]);
-
-                data[data.Count - 1][0] = reader[0].ToString();
-                data[data.Count - 1][1] = reader[1].ToString();
-                //data[data.Count - 1][2] = reader[2].ToString();
-                //data[data.Count - 1][3] = reader[3].ToString();
-                //data[data.Count - 1][4] = reader[4].ToString();
-                //data[data.Count - 1][5] = reader[5].ToString();
-                //data[data.Count - 1][6] = reader[6].ToString();
-            }
-
-            reader.Close();
-            sqlConnection.Close();
-
-            foreach (string[] s in data)
-                dataGridView1.Rows.Add(s);
+            Doljniki show = new Doljniki();
+            show.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -145,12 +124,23 @@ namespace KourseLibraryRV
             show.ShowDialog();
         }
 
-       
+
 
         private void button6_Click_1(object sender, EventArgs e)
         {
             Vudano_Vsiem show = new Vudano_Vsiem();
             show.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            TopBook show = new TopBook();
+            show.ShowDialog();
+        }
+
+        private async void button8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

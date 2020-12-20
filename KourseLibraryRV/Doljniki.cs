@@ -11,21 +11,20 @@ using System.Windows.Forms;
 
 namespace KourseLibraryRV
 {
-    
-    public partial class TableShow_Katalog : Form
+    public partial class Doljniki : Form
     {
-        public TableShow_Katalog()
+        public Doljniki()
         {
             InitializeComponent();
-            LoadData();
         }
 
-        private void LoadData()
+        private void Doljniki_Load(object sender, EventArgs e)
         {
             string connectString = @"Data Source=MAHNITSKIY-PC;Initial Catalog=KourseWork;Integrated Security=True";
             SqlConnection myConnection = new SqlConnection(connectString);
             myConnection.Open();
-            string query = "SELECT * FROM Katalog ";
+            string query = "SELECT ReadCardNum, FIO FROM Readers  WHERE ReadCardNum = (SELECT ReadCardNum FROM Vudachia  WHERE RealDateBack IS NULL) ";
+
             SqlCommand command = new SqlCommand(query, myConnection);
             SqlDataReader reader = command.ExecuteReader();
 
@@ -33,32 +32,18 @@ namespace KourseLibraryRV
 
             while (reader.Read())
             {
-                data.Add(new string[7]);
+                data.Add(new string[2]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();
-                data[data.Count - 1][2] = reader[2].ToString();
-                data[data.Count - 1][3] = reader[3].ToString();
-                data[data.Count - 1][4] = reader[4].ToString();
-                data[data.Count - 1][5] = reader[5].ToString();
-                data[data.Count - 1][6] = reader[6].ToString();
+                
             }
 
             reader.Close();
             myConnection.Close();
+
             foreach (string[] s in data)
                 dataGridView1.Rows.Add(s);
-        }
-
-      
-        private void TableShow_Load(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

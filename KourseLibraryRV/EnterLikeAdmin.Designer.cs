@@ -38,7 +38,7 @@ namespace KourseLibraryRV
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(335, 215);
+            this.button3.Location = new System.Drawing.Point(220, 132);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(224, 23);
             this.button3.TabIndex = 5;
@@ -48,7 +48,7 @@ namespace KourseLibraryRV
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(335, 153);
+            this.button2.Location = new System.Drawing.Point(220, 70);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(224, 23);
             this.button2.TabIndex = 4;
@@ -58,7 +58,7 @@ namespace KourseLibraryRV
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(335, 107);
+            this.button1.Location = new System.Drawing.Point(220, 24);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(224, 23);
             this.button1.TabIndex = 3;
@@ -68,7 +68,7 @@ namespace KourseLibraryRV
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(432, 306);
+            this.button4.Location = new System.Drawing.Point(317, 223);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(95, 23);
             this.button4.TabIndex = 6;
@@ -79,7 +79,7 @@ namespace KourseLibraryRV
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(148, 316);
+            this.label1.Location = new System.Drawing.Point(33, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(259, 13);
             this.label1.TabIndex = 7;
@@ -89,7 +89,7 @@ namespace KourseLibraryRV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(473, 282);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

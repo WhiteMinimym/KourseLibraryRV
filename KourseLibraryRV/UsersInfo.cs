@@ -26,7 +26,7 @@ namespace KourseLibraryRV
         {
             try
             {
-                dataAdapter = new SqlDataAdapter("SELECT * , 'Delete' AS [Command] FROM Katalog ", sqlConnection);
+                dataAdapter = new SqlDataAdapter("SELECT * , 'Delete' AS [Command] FROM Autorization ", sqlConnection);
                 sqlBuilder = new SqlCommandBuilder(dataAdapter);
 
 
@@ -36,8 +36,8 @@ namespace KourseLibraryRV
 
                 dataSet = new DataSet();
 
-                dataAdapter.Fill(dataSet, ("Katalog"));
-                dataGridView1.DataSource = dataSet.Tables["Katalog"];
+                dataAdapter.Fill(dataSet, ("Autorization"));
+                dataGridView1.DataSource = dataSet.Tables["Autorization"];
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
@@ -54,9 +54,9 @@ namespace KourseLibraryRV
         {
             try
             {
-                dataSet.Tables["Katalog"].Clear();
-                dataAdapter.Fill(dataSet, ("Katalog"));
-                dataGridView1.DataSource = dataSet.Tables["Katalog"];
+                dataSet.Tables["Autorization"].Clear();
+                dataAdapter.Fill(dataSet, ("Autorization"));
+                dataGridView1.DataSource = dataSet.Tables["Autorization"];
 
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {

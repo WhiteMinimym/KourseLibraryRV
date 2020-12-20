@@ -16,7 +16,7 @@ namespace KourseLibraryRV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Vudano_Vsiem());
+            Application.Run(new EnterLikeAdmin());
             
            
 

@@ -57,11 +57,12 @@ namespace KourseLibraryRV
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
-
+            Readers show = new Readers();
+            show.ShowDialog();
         }
-
-        
     }
 }

@@ -31,6 +31,8 @@ C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.Wpf.xml
-C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.AllDiagramm.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.TopReaders.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.csproj.CopyComplete
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.TopBook.resources
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.Vudano_Vsiem.resources
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.Doljniki.resources

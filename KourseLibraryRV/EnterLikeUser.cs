@@ -41,10 +41,10 @@ namespace KourseLibraryRV
             show.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+       
+        private void EnterLikeUser_Load(object sender, EventArgs e)
         {
-            Readers show = new Readers();
-            show.ShowDialog();
+
         }
     }
 }
