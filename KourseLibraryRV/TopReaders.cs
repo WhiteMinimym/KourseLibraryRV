@@ -23,7 +23,7 @@ namespace KourseLibraryRV
             SqlConnection sqlConnection = new SqlConnection(@"Data Source=MAHNITSKIY-PC;Initial Catalog=KourseWork;Integrated Security=True");
             await sqlConnection.OpenAsync();
 
-            string query = "SELECT ReadCardNum, FIO FROM Readers  WHERE ReadCardNum = (SELECT MAX(ReadCardNum) FROM Vudachia )) ";
+            string query = "SELECT ReadCardNum, FIO FROM Readers  WHERE ReadCardNum = (SELECT Top 1  ReadCardNum FROM Vudachia )";
 
             SqlCommand command = new SqlCommand(query, sqlConnection);
             SqlDataReader reader = command.ExecuteReader();
@@ -32,7 +32,7 @@ namespace KourseLibraryRV
 
             while (reader.Read())
             {
-                data.Add(new string[1]);
+                data.Add(new string[2]);
 
                 data[data.Count - 1][0] = reader[0].ToString();
                 data[data.Count - 1][1] = reader[1].ToString();

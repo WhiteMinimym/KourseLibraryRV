@@ -149,7 +149,7 @@ namespace KourseLibraryRV
 
         private void button6_Click_1(object sender, EventArgs e)
         {
-            AllDiagramm show = new AllDiagramm();
+            Vudano_Vsiem show = new Vudano_Vsiem();
             show.ShowDialog();
         }
     }

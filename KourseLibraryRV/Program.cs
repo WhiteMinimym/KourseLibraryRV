@@ -16,9 +16,9 @@ namespace KourseLibraryRV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainLIbraryPart());
+            Application.Run(new Vudano_Vsiem());
             
-           //Синий
+           
 
         }
     }

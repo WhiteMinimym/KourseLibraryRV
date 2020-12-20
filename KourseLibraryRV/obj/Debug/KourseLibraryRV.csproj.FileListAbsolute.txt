@@ -22,3 +22,15 @@ C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibra
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.WydachaKnigAdmin.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.UsersInfo.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.Sklad.resources
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.dll
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.pdb
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.xml
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.AllDiagramm.resources
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.TopReaders.resources
+C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.csproj.CopyComplete

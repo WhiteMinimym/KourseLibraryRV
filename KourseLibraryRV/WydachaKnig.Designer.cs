@@ -57,6 +57,7 @@ namespace KourseLibraryRV
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -64,7 +65,6 @@ namespace KourseLibraryRV
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -139,9 +139,10 @@ namespace KourseLibraryRV
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 228);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(328, 13);
+            this.label13.Size = new System.Drawing.Size(473, 13);
             this.label13.TabIndex = 22;
-            this.label13.Text = "Введите в форму ниже оставшееся количество книг на складе";
+            this.label13.Text = "Введите в колонку ниже оставшееся количество книг на складе после  выдачи этой кн" +
+    "иги:";
             // 
             // textBox9
             // 
@@ -341,6 +342,16 @@ namespace KourseLibraryRV
             this.tabPage2.Text = "Прочее";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(457, 67);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(294, 23);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Выдача книг за всё время";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -399,16 +410,6 @@ namespace KourseLibraryRV
             this.label9.Size = new System.Drawing.Size(60, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Должники";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(457, 67);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(294, 23);
-            this.button6.TabIndex = 25;
-            this.button6.Text = "Выдача книг за всё время";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // WydachaKnig
             // 
