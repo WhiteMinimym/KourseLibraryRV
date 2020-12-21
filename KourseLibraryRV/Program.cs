@@ -16,7 +16,7 @@ namespace KourseLibraryRV
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new EnterLikeAdmin());
+            Application.Run(new MainLIbraryPart());
             
            
 

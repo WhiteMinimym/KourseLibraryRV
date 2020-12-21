@@ -31,7 +31,7 @@ namespace KourseLibraryRV
 
         private void button4_Click(object sender, EventArgs e)
         {
-            UsersInfo show = new UsersInfo();
+            RegistrPeople show = new RegistrPeople();
             show.ShowDialog();
         }
 

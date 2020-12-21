@@ -14,8 +14,7 @@ namespace KourseLibraryRV
     public  partial class Registration : Form
     {
         SqlConnection sqlConnection;
-       // sqlConnection = new sqlConnection;
-        //string connectionString = @"Data Source=MAHNITSKIY-PC;Initial Catalog=KourseWork;Integrated Security=True";
+       
 
 
         public Registration()
@@ -39,7 +38,6 @@ namespace KourseLibraryRV
             if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox1.Text) &&
                 !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrWhiteSpace(textBox2.Text))
             {
-               // SqlDataReader sqlReader = null;
                 SqlCommand command = new SqlCommand("INSERT INTO [Autorization] (Username,Pass,Ogranichenia) VALUES  (@Name,@Pass,@Something)", sqlConnection);
 
                 command.Parameters.AddWithValue("Name", textBox1.Text);
@@ -61,7 +59,11 @@ namespace KourseLibraryRV
         private async void button2_Click(object sender, EventArgs e)
         {
             SqlDataReader sqlReader = null;
-            SqlCommand command = new SqlCommand("SELECT * FROM [Autorization]", sqlConnection);
+            SqlCommand command = new SqlCommand("SELECT Username,Pass,Ogranichenia FROM [Autorization] WHERE Username = '@Name' AND Pass = '@Pass' AND Ogranichenia = '@Something'", sqlConnection);
+
+            command.Parameters.AddWithValue("Name", textBox1.Text);
+            command.Parameters.AddWithValue("Pass", textBox2.Text);
+            command.Parameters.AddWithValue("Something", textBox3.Text);
 
             try
             {
@@ -82,9 +84,7 @@ namespace KourseLibraryRV
                     sqlReader.Close();
             }
 
-           // TableShow show = new TableShow();
-            //show.ShowDialog();
-
+           
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
