@@ -162,15 +162,14 @@ namespace KourseLibraryRV
                     DataGridViewRow row = dataGridView1.Rows[lastRaw];
 
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[6, lastRaw] = linkCell;
+                    dataGridView1[5, lastRaw] = linkCell;
                     row.Cells["Command"].Value = "Insert";
-                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -204,7 +203,7 @@ namespace KourseLibraryRV
         {
             e.Control.KeyPress -= new KeyPressEventHandler(Column_KeyPress);
 
-            if (dataGridView1.CurrentCell.ColumnIndex == 2)
+            if (dataGridView1.CurrentCell.ColumnIndex == 3)
             {
                 TextBox textBox = e.Control as TextBox;
                 if (textBox != null)
@@ -220,6 +219,11 @@ namespace KourseLibraryRV
                     textBox.KeyPress += new KeyPressEventHandler(Column_KeyPress);
                 }
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

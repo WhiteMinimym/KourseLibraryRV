@@ -33,7 +33,7 @@ namespace KourseLibraryRV
         {
             try
             {
-                dataAdapter = new SqlDataAdapter("SELECT * , 'Update' AS [Command] FROM  Autorization", sqlConnection);
+                dataAdapter = new SqlDataAdapter("SELECT * , 'Delete' AS [Command] FROM  Autorization", sqlConnection);
                 sqlBuilder = new SqlCommandBuilder(dataAdapter);
 
 

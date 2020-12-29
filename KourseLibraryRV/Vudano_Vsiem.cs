@@ -15,11 +15,7 @@ namespace KourseLibraryRV
 {
     public partial class Vudano_Vsiem : Form
     {
-       // private object vudachaValues;
-
-        //SqlConnection sqlConnection = null;
-        //SqlDataReader reader = null;
-
+       
         public Vudano_Vsiem()
         {
             InitializeComponent();

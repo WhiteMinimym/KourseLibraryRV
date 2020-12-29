@@ -40,5 +40,10 @@ namespace KourseLibraryRV
             WydachaKnigAdmin show = new WydachaKnigAdmin();
             show.ShowDialog();
         }
+
+        private void EnterLikeAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -32,19 +32,19 @@ namespace KourseLibraryRV
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kourseWorkDataSet = new KourseLibraryRV.KourseWorkDataSet();
-            this.bookFondBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.book_FondTableAdapter = new KourseLibraryRV.KourseWorkDataSetTableAdapters.Book_FondTableAdapter();
             this.invNBookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.libNBookDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.otmetkaPrisutstviaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.howManyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookFondBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kourseWorkDataSet = new KourseLibraryRV.KourseWorkDataSet();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.book_FondTableAdapter = new KourseLibraryRV.KourseWorkDataSetTableAdapters.Book_FondTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookFondBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -72,37 +72,6 @@ namespace KourseLibraryRV
             this.dataGridView1.Size = new System.Drawing.Size(800, 423);
             this.dataGridView1.TabIndex = 11;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
-            this.menuStrip1.TabIndex = 10;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
-            this.файлToolStripMenuItem.Text = "Файл";
-            // 
-            // kourseWorkDataSet
-            // 
-            this.kourseWorkDataSet.DataSetName = "KourseWorkDataSet";
-            this.kourseWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bookFondBindingSource
-            // 
-            this.bookFondBindingSource.DataMember = "Book_Fond";
-            this.bookFondBindingSource.DataSource = this.kourseWorkDataSet;
-            // 
-            // book_FondTableAdapter
-            // 
-            this.book_FondTableAdapter.ClearBeforeFill = true;
-            // 
             // invNBookDataGridViewTextBoxColumn
             // 
             this.invNBookDataGridViewTextBoxColumn.DataPropertyName = "InvNBook";
@@ -127,6 +96,37 @@ namespace KourseLibraryRV
             this.howManyDataGridViewTextBoxColumn.HeaderText = "HowMany";
             this.howManyDataGridViewTextBoxColumn.Name = "howManyDataGridViewTextBoxColumn";
             // 
+            // bookFondBindingSource
+            // 
+            this.bookFondBindingSource.DataMember = "Book_Fond";
+            this.bookFondBindingSource.DataSource = this.kourseWorkDataSet;
+            // 
+            // kourseWorkDataSet
+            // 
+            this.kourseWorkDataSet.DataSetName = "KourseWorkDataSet";
+            this.kourseWorkDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
+            this.menuStrip1.TabIndex = 10;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // book_FondTableAdapter
+            // 
+            this.book_FondTableAdapter.ClearBeforeFill = true;
+            // 
             // Sklad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,10 +139,10 @@ namespace KourseLibraryRV
             this.Text = "Sklad";
             this.Load += new System.EventHandler(this.Sklad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookFondBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookFondBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

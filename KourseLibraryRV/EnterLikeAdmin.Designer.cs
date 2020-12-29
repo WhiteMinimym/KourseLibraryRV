@@ -97,6 +97,7 @@ namespace KourseLibraryRV
             this.Controls.Add(this.button1);
             this.Name = "EnterLikeAdmin";
             this.Text = "EnterLikeAdmin";
+            this.Load += new System.EventHandler(this.EnterLikeAdmin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

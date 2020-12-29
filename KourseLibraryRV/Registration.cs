@@ -56,36 +56,7 @@ namespace KourseLibraryRV
             }
         }
 
-        private async void button2_Click(object sender, EventArgs e)
-        {
-            SqlDataReader sqlReader = null;
-            SqlCommand command = new SqlCommand("SELECT Username,Pass,Ogranichenia FROM [Autorization] WHERE Username = '@Name' AND Pass = '@Pass' AND Ogranichenia = '@Something'", sqlConnection);
 
-            command.Parameters.AddWithValue("Name", textBox1.Text);
-            command.Parameters.AddWithValue("Pass", textBox2.Text);
-            command.Parameters.AddWithValue("Something", textBox3.Text);
-
-            try
-            {
-                sqlReader = await command.ExecuteReaderAsync();
-
-                while (await sqlReader.ReadAsync())
-                {
-                    listBox1.Items.Add(Convert.ToString(sqlReader["Username"]) + "    " + Convert.ToString(sqlReader["Pass"]) + "    " + Convert.ToString(sqlReader["Ogranichenia"]));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString(), ex.Source.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (sqlReader != null)
-                    sqlReader.Close();
-            }
-
-           
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {

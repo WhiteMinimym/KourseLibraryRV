@@ -13,11 +13,12 @@ namespace KourseLibraryRV
 {
     public partial class UsersInfo : Form
     {
+
         private SqlConnection sqlConnection = null;
         private SqlCommandBuilder sqlBuilder = null;
         private SqlDataAdapter dataAdapter = null;
         private DataSet dataSet = null;
-
+        private bool NewRowAdding = false;
         public UsersInfo()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace KourseLibraryRV
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[7, i] = linkCell;
+                    dataGridView1[3, i] = linkCell;
                 }
             }
             catch (Exception ex)
@@ -61,7 +62,7 @@ namespace KourseLibraryRV
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[7, i] = linkCell;
+                    dataGridView1[3,i] = linkCell;
                 }
             }
             catch (Exception ex)
@@ -84,6 +85,111 @@ namespace KourseLibraryRV
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            try
+            {
+                if (e.ColumnIndex == 3)
+                {
+                    string task = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+                    if (task == "Delete")
+                    {
+                        if (MessageBox.Show("Удалить эту строку?", "Удаление.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            int rowIndex = e.RowIndex;
+                            dataGridView1.Rows.RemoveAt(rowIndex);
+
+                            dataSet.Tables["Autorization"].Rows[rowIndex].Delete();
+                            dataAdapter.Update(dataSet, "Autorization");
+
+
+                        }
+                    }
+                    else if (task == "Insert")
+                    {
+                        int rowIndex = dataGridView1.Rows.Count - 2;
+
+                        DataRow row = dataSet.Tables["Autorization"].NewRow();
+                        row["Name"] = dataGridView1.Rows[rowIndex].Cells["Name"].Value;
+                        row["Pass"] = dataGridView1.Rows[rowIndex].Cells["Pass"].Value;
+                        row["Ogranichenia"] = dataGridView1.Rows[rowIndex].Cells["Ogranichenia"].Value;
+
+
+
+                        dataSet.Tables["Autorization"].Rows.Add(row);
+                        dataSet.Tables["Autorization"].Rows.RemoveAt(dataSet.Tables["Autorization"].Rows.Count - 1);
+                        dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
+                        dataGridView1.Rows[e.RowIndex].Cells[3].Value = "Delete";
+
+                        dataAdapter.Update(dataSet, "Autorization");
+                        NewRowAdding = false;
+                    }
+                    else if (task == "Update")
+                    {
+                        if (MessageBox.Show("Обновить строку?", "Обновление", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            int r = e.RowIndex;
+
+                            dataSet.Tables["Autorization"].Rows[r]["Name"] = dataGridView1.Rows[r].Cells["Name"].Value;
+                            dataSet.Tables["Autorization"].Rows[r]["Pass"] = dataGridView1.Rows[r].Cells["Pass"].Value;
+                            dataSet.Tables["Autorization"].Rows[r]["Ogranichenia"] = dataGridView1.Rows[r].Cells["Ogranichenia"].Value;
+
+
+
+                            dataAdapter.Update(dataSet, "Vudachia");
+                            dataGridView1.Rows[e.RowIndex].Cells[3].Value = "Delete";
+                        }
+                    }
+
+                    ReLoadData();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (NewRowAdding == false)
+                {
+                    int rowIndex = dataGridView1.SelectedCells[0].RowIndex;
+                    DataGridViewRow editingRow = dataGridView1.Rows[rowIndex];
+
+                    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+                    dataGridView1[3, rowIndex] = linkCell;
+                    editingRow.Cells["Command"].Value = "Update";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dataGridView1_UserAddedRow(object sender, DataGridViewRowEventArgs e)
+        {
+
+            try
+            {
+                if (NewRowAdding == false)
+                {
+                    NewRowAdding = true;
+                    int lastRaw = dataGridView1.Rows.Count - 2;
+                    DataGridViewRow row = dataGridView1.Rows[lastRaw];
+
+                    DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
+                    dataGridView1[3, lastRaw] = linkCell;
+                    row.Cells["Command"].Value = "Insert";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

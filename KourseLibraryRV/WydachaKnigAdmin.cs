@@ -104,17 +104,14 @@ namespace KourseLibraryRV
                             int rowIndex = e.RowIndex;
                             dataGridView1.Rows.RemoveAt(rowIndex);
                             dataSet.Tables["Vudachia"].Rows[rowIndex].Delete();
-
-                            dataAdapter.Update(dataSet, "Vudachia");
-
-
+                            dataAdapter.Update(dataSet, "Vudachia"); 
                         }
                     }
                     else if (task == "Insert")
                     {
                         int rowIndex = dataGridView1.Rows.Count - 2;
-
                         DataRow row = dataSet.Tables["Vudachia"].NewRow();
+
                         row["ReadCardNum"] = dataGridView1.Rows[rowIndex].Cells["ReadCardNum"].Value;
                         row["InvNBook"] = dataGridView1.Rows[rowIndex].Cells["InvNBook"].Value;
                         row["LibNBook"] = dataGridView1.Rows[rowIndex].Cells["LibNBook"].Value;
@@ -148,7 +145,7 @@ namespace KourseLibraryRV
                             dataSet.Tables["Vudachia"].Rows[r]["RealDateBack"] = dataGridView1.Rows[r].Cells["RealDateBack"].Value;
 
                             dataAdapter.Update(dataSet, "Vudachia");
-                            dataGridView1.Rows[e.RowIndex].Cells[7].Value = "Delete";
+                            dataGridView1.Rows[e.RowIndex].Cells[8].Value = "Delete";
                         }
                     }
 
@@ -174,7 +171,7 @@ namespace KourseLibraryRV
                     DataGridViewRow row = dataGridView1.Rows[lastRaw];
 
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[6, lastRaw] = linkCell;
+                    dataGridView1[8, lastRaw] = linkCell;
                     row.Cells["Command"].Value = "Insert";
                 }
             }
@@ -194,7 +191,7 @@ namespace KourseLibraryRV
                     DataGridViewRow editingRow = dataGridView1.Rows[rowIndex];
 
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[7, rowIndex] = linkCell;
+                    dataGridView1[8, rowIndex] = linkCell;
                     editingRow.Cells["Command"].Value = "Update";
                 }
             }
