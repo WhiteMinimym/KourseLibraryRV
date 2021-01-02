@@ -91,9 +91,9 @@ namespace KourseLibraryRV
                         {
                             int rowIndex = e.RowIndex;
                             dataGridView1.Rows.RemoveAt(rowIndex);
-                            dataSet.Tables["Readers"].Rows[rowIndex].Delete();
+                            dataSet.Tables["Autorization"].Rows[rowIndex].Delete();
 
-                            dataAdapter.Update(dataSet, "Readers");
+                            dataAdapter.Update(dataSet, "Autorization");
 
 
                         }
@@ -103,18 +103,16 @@ namespace KourseLibraryRV
                         int rowIndex = dataGridView1.Rows.Count - 2;
 
                         DataRow row = dataSet.Tables["Readers"].NewRow();
-                        row["ReadCardNum"] = dataGridView1.Rows[rowIndex].Cells["ReadCardNum"].Value;
-                        row["Adress"] = dataGridView1.Rows[rowIndex].Cells["Adress"].Value;
-                        row["CellPhone"] = dataGridView1.Rows[rowIndex].Cells["CellPhone"].Value;
-                        row["Phone"] = dataGridView1.Rows[rowIndex].Cells["Phone"].Value;
-                        row["FIO"] = dataGridView1.Rows[rowIndex].Cells["FIO"].Value;
+                        row["Username"] = dataGridView1.Rows[rowIndex].Cells["Username"].Value;
+                        row["Pass"] = dataGridView1.Rows[rowIndex].Cells["Pass"].Value;
+                        row["Ogranichenia"] = dataGridView1.Rows[rowIndex].Cells["Ogranichenia"].Value;
 
-                        dataSet.Tables["Readers"].Rows.Add(row);
-                        dataSet.Tables["Readers"].Rows.RemoveAt(dataSet.Tables["Readers"].Rows.Count - 1);
+                        dataSet.Tables["Autorization"].Rows.Add(row);
+                        dataSet.Tables["Autorization"].Rows.RemoveAt(dataSet.Tables["Autorization"].Rows.Count - 1);
                         dataGridView1.Rows.RemoveAt(dataGridView1.Rows.Count - 2);
-                        dataGridView1.Rows[e.RowIndex].Cells[5].Value = "Delete";
+                        dataGridView1.Rows[e.RowIndex].Cells[3].Value = "Delete";
 
-                        dataAdapter.Update(dataSet, "Readers");
+                        dataAdapter.Update(dataSet, "Autorization");
                         NewRowAdding = false;
                     }
                     else if (task == "Update")
@@ -123,15 +121,12 @@ namespace KourseLibraryRV
                         {
                             int r = e.RowIndex;
 
-                            dataSet.Tables["Readers"].Rows[r]["ReadCardNum"] = dataGridView1.Rows[r].Cells["ReadCardNum"].Value;
-                            dataSet.Tables["Readers"].Rows[r]["Adress"] = dataGridView1.Rows[r].Cells["Adress"].Value;
-                            dataSet.Tables["Readers"].Rows[r]["CellPhone"] = dataGridView1.Rows[r].Cells["CellPhone"].Value;
-                            dataSet.Tables["Readers"].Rows[r]["Phone"] = dataGridView1.Rows[r].Cells["Phone"].Value;
-                            dataSet.Tables["Readers"].Rows[r]["FIO"] = dataGridView1.Rows[r].Cells["FIO"].Value;
+                            dataSet.Tables["Autorization"].Rows[r]["Username"] = dataGridView1.Rows[r].Cells["Username"].Value;
+                            dataSet.Tables["Autorization"].Rows[r]["Pass"] = dataGridView1.Rows[r].Cells["Pass"].Value;
+                            dataSet.Tables["Autorization"].Rows[r]["Ogranichenia"] = dataGridView1.Rows[r].Cells["Ogranichenia"].Value;
 
-
-                            dataAdapter.Update(dataSet, "Readers");
-                            dataGridView1.Rows[e.RowIndex].Cells[5].Value = "Delete";
+                            dataAdapter.Update(dataSet, "Autorization");
+                            dataGridView1.Rows[e.RowIndex].Cells[3].Value = "Delete";
                         }
                     }
 
@@ -157,7 +152,7 @@ namespace KourseLibraryRV
                     DataGridViewRow row = dataGridView1.Rows[lastRaw];
 
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[6, lastRaw] = linkCell;
+                    dataGridView1[3, lastRaw] = linkCell;
                     row.Cells["Command"].Value = "Insert";
                 }
             }
@@ -178,7 +173,7 @@ namespace KourseLibraryRV
                     DataGridViewRow editingRow = dataGridView1.Rows[rowIndex];
 
                     DataGridViewLinkCell linkCell = new DataGridViewLinkCell();
-                    dataGridView1[5, rowIndex] = linkCell;
+                    dataGridView1[3, rowIndex] = linkCell;
                     editingRow.Cells["Command"].Value = "Update";
                 }
             }
@@ -187,33 +182,16 @@ namespace KourseLibraryRV
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void Column_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+        //private void Column_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+        //    {
+        //        e.Handled = true;
+        //    }
+        //}
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            e.Control.KeyPress -= new KeyPressEventHandler(Column_KeyPress);
-
-            if (dataGridView1.CurrentCell.ColumnIndex == 0)
-            {
-                TextBox textBox = e.Control as TextBox;
-                if (textBox != null)
-                {
-                    textBox.KeyPress += new KeyPressEventHandler(Column_KeyPress);
-                }
-            }
-            if (dataGridView1.CurrentCell.ColumnIndex == 3)
-            {
-                TextBox textBox = e.Control as TextBox;
-                if (textBox != null)
-                {
-                    textBox.KeyPress += new KeyPressEventHandler(Column_KeyPress);
-                }
-            }
+            
         }
     }
 }

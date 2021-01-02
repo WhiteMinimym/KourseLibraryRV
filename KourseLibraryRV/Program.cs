@@ -22,7 +22,7 @@ namespace KourseLibraryRV
             // Application.Run(new UsersInfo());
             // Application.Run(new WydachaKnigAdmin());
             // Application.Run(new TableShow_Katalog_Admin());
-            Application.Run(new Readers());
+            Application.Run(new MainLIbraryPart());
 
         }
     }

@@ -175,12 +175,6 @@
     <Compile Include="WydachaKnigAdmin.Designer.cs">
       <DependentUpon>WydachaKnigAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Выдача книг.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Выдача книг.Designer.cs">
-      <DependentUpon>Выдача книг.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Doljniki.resx">
       <DependentUpon>Doljniki.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,9 +237,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WydachaKnigAdmin.resx">
       <DependentUpon>WydachaKnigAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Выдача книг.resx">
-      <DependentUpon>Выдача книг.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="KourseWorkDataSet.xsc">
       <DependentUpon>KourseWorkDataSet.xsd</DependentUpon>

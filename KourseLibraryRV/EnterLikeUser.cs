@@ -37,7 +37,7 @@ namespace KourseLibraryRV
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Выдача_книг show = new Выдача_книг();
+            WydachaKnigAdmin show = new WydachaKnigAdmin();
             show.ShowDialog();
         }
 

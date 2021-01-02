@@ -9,7 +9,6 @@ C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibra
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.pdb
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.MainLIbraryPart.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.Registration.resources
-C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.Выдача_книг.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.TableShow_Katalog.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.TableShow_Katalog_Admin.resources
 C:\Users\User\source\repos\KourseLibraryRV\KourseLibraryRV\obj\Debug\KourseLibraryRV.EnterLikeAdmin.resources

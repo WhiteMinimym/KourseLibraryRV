@@ -34,81 +34,28 @@ namespace KourseLibraryRV
 
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
 
-            /*if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox1.Text) &&
-                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrWhiteSpace(textBox2.Text) &&
-                !string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text) &&
-                !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
-                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrWhiteSpace(textBox5.Text) &&
-                !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text) )
-            {
-                SqlCommand command = new SqlCommand("INSERT INTO Vudachia (ReadCardNum,InvNBook,LibNBook,DateVudachi,Condition,DateBack,ID_vudachi,RealDateBack) VALUES  (@NReader,@InvNB,@LibNB,@IDvudachi,@DateVud,@Condition,@DateBack,@RealDateBack)" +
-                    "Update Book_Fond SET HowMany = @Ostachia", sqlConnection);
-                command.Parameters.AddWithValue("NReader", textBox4.Text);
-                command.Parameters.AddWithValue("InvNB", textBox3.Text);
-                command.Parameters.AddWithValue("LibNB", textBox2.Text);
-                command.Parameters.AddWithValue("IDvudachi", textBox1.Text);
-                command.Parameters.AddWithValue("DateVud", textBox5.Text);
-                command.Parameters.AddWithValue("DateBack", textBox6.Text);
-                command.Parameters.AddWithValue("Ostachia", textBox9.Text);
+                SqlCommand command = new SqlCommand(
+             $"INSERT INTO Vudachia (ReadCardNum,InvNBook,LibNBook,DateVudachi,Condition,DateBack,ID_vudachi,RealDateBack) VALUES  (@ReadCardNum,@InvNBook,@LibNBook,@DateVudachi,@Condition,@DateBack,@ID_vudachi,@RealDateBack)" +
+             $"UPDATE Book_Fond SET HowMany = HowMany - 1 WHERE LibNBook = @LibNBook ", sqlConnection);
 
+            command.Parameters.AddWithValue("ReadCardNum", textBox4.Text);
+            command.Parameters.AddWithValue("InvNBook", textBox3.Text);
+            command.Parameters.AddWithValue("LibNBook", textBox2.Text);
+            command.Parameters.AddWithValue("DateVudachi", textBox5.Text);
+            command.Parameters.AddWithValue("Condition", textBox9.Text);
+            command.Parameters.AddWithValue("DateBack", textBox6.Text);
+            command.Parameters.AddWithValue("ID_vudachi", textBox1.Text);
+            command.Parameters.AddWithValue("RealDateBack", textBox13.Text);
 
-
-                await command.ExecuteNonQueryAsync();
-
-            }
-            else*/
-            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox1.Text) &&
-                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrWhiteSpace(textBox2.Text) &&
-                !string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text) &&
-                !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
-                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrWhiteSpace(textBox5.Text) &&
-                !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text) &&
-                !string.IsNullOrEmpty(textBox7.Text) && !string.IsNullOrWhiteSpace(textBox7.Text) &&
-                !string.IsNullOrEmpty(textBox8.Text) && !string.IsNullOrWhiteSpace(textBox8.Text) &&
-                !string.IsNullOrEmpty(textBox9.Text) && !string.IsNullOrWhiteSpace(textBox9.Text))
-            {
-                SqlCommand command = new SqlCommand("INSERT INTO Vudachia (ReadCardNum,InvNBook,LibNBook,DateVudachi,Condition,DateBack,ID_vudachi,RealDateBack) VALUES  (@NReader,@InvNB,@LibNB,@IDvudachi,@DateVud,Null,@DateBack,Null)" +
-                    "Update Book_Fond SET HowMany = @Ostachia" +
-                    "WHERE InvNBook = 'InvNB', LibNBook = 'LibNBook'", sqlConnection);
-                command.Parameters.AddWithValue("NReader", textBox4.Text);
-                command.Parameters.AddWithValue("InvNB", textBox3.Text);
-                command.Parameters.AddWithValue("LibNB", textBox2.Text);
-                command.Parameters.AddWithValue("IDvudachi", textBox1.Text);
-                command.Parameters.AddWithValue("DateVud", textBox5.Text);
-                command.Parameters.AddWithValue("Condition", textBox7.Text);
-                command.Parameters.AddWithValue("DateBack", textBox6.Text);
-                command.Parameters.AddWithValue("RealDateBack", textBox8.Text);
-                command.Parameters.AddWithValue("Ostachia", textBox9.Text);
-
-
-                await command.ExecuteNonQueryAsync();
-
-            }
-            else if (!string.IsNullOrEmpty(textBox9.Text) && !string.IsNullOrEmpty(textBox9.Text))
-            {
-                SqlCommand command = new SqlCommand("SELECT HowMany FROM BookFond WHERE BookFond = '@BookFond'", sqlConnection);
-                command.Parameters.AddWithValue("Ostachia", textBox9.Text);
-            }
-            else if (!string.IsNullOrEmpty(textBox9.Text) && !string.IsNullOrEmpty(textBox9.Text))
-            {
-                SqlCommand command = new SqlCommand("SELECT HowMany FROM BookFond WHERE BookFond = 1", sqlConnection);
-                command.Parameters.AddWithValue("Ostachia", textBox9.Text);
-
-                label13.Text = "Когда на складе осталась одна книга, то её не можем выдать";
-            }
-            else
-            {
-                label10.Visible = true;
-                label10.Text = "Все поля должны быть заполнены! Впишите значение Null в колонку 'Состояние' если книгу не вернули";
-            }
+            MessageBox.Show(command.ExecuteNonQuery().ToString());
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Выдача_книг show = new Выдача_книг();
+            WydachaKnigAdmin show = new WydachaKnigAdmin();
             show.ShowDialog();
         }
 
@@ -164,10 +111,8 @@ namespace KourseLibraryRV
                 !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrWhiteSpace(textBox5.Text) &&
                 !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text))
             {
-                SqlCommand command = new SqlCommand("UPDATE Vudachia SET Condition = '@Condition', RealDateBack = '@RealDateBack'" +
-                    "WHERE ID_vudachi = '@IDvudachi' AND LibNBook = '@LibNB', ReadCardNum = '@NReader'" +
-                    "Update Book_Fond SET HowMany = HowMany + 1" +
-                    "WHERE LibNBook = '@LibNB'", sqlConnection);
+                SqlCommand command = new SqlCommand("UPDATE Vudachia SET Condition = '@Condition', RealDateBack = '@RealDateBack' WHERE ID_vudachi = '@IDvudachi' AND LibNBook = '@LibNB', ReadCardNum = '@NReader'" +
+                    "UPDATE Book_Fond SET HowMany = HowMany + 1 WHERE LibNBook = '@LibNB'", sqlConnection);
 
                 command.Parameters.AddWithValue("NReader", textBox12.Text);
                 command.Parameters.AddWithValue("IDvudachi", textBox10.Text);
@@ -189,7 +134,7 @@ namespace KourseLibraryRV
 
         private void button10_Click(object sender, EventArgs e)
         {
-            Выдача_книг show = new Выдача_книг();
+            WydachaKnigAdmin show = new WydachaKnigAdmin();
             show.ShowDialog();
         }
     }
