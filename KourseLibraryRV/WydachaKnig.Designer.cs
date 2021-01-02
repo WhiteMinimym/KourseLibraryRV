@@ -33,8 +33,11 @@ namespace KourseLibraryRV
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -76,10 +79,6 @@ namespace KourseLibraryRV
             this.kourseWorkDataSet = new KourseLibraryRV.KourseWorkDataSet();
             this.katalogBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.katalogTableAdapter = new KourseLibraryRV.KourseWorkDataSetTableAdapters.KatalogTableAdapter();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -104,7 +103,7 @@ namespace KourseLibraryRV
             this.tabControl1.Location = new System.Drawing.Point(13, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 434);
+            this.tabControl1.Size = new System.Drawing.Size(817, 434);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -114,7 +113,6 @@ namespace KourseLibraryRV
             this.tabPage1.Controls.Add(this.textBox9);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.button4);
-            this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.textBox6);
@@ -134,31 +132,53 @@ namespace KourseLibraryRV
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(767, 408);
+            this.tabPage1.Size = new System.Drawing.Size(809, 408);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Выдача";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(589, 149);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 27;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(453, 156);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(135, 13);
+            this.label18.TabIndex = 26;
+            this.label18.Text = "Реальная дата возврата ";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(589, 110);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(453, 117);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 13);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "Состояние";
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(78, 299);
+            this.button4.Location = new System.Drawing.Point(105, 255);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 23;
             this.button4.Text = "Склад";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 228);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(473, 13);
-            this.label13.TabIndex = 22;
-            this.label13.Text = "Введите в колонку ниже оставшееся количество книг на складе после  выдачи этой кн" +
-    "иги:";
             // 
             // button3
             // 
@@ -306,7 +326,7 @@ namespace KourseLibraryRV
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(767, 408);
+            this.tabPage2.Size = new System.Drawing.Size(809, 408);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Прочее";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -396,7 +416,7 @@ namespace KourseLibraryRV
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(767, 408);
+            this.tabPage3.Size = new System.Drawing.Size(809, 408);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Читатель вернул книгу";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -526,38 +546,6 @@ namespace KourseLibraryRV
             // 
             this.katalogTableAdapter.ClearBeforeFill = true;
             // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(589, 110);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 25;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(453, 117);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 13);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Состояние";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(589, 149);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 27;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(453, 156);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(135, 13);
-            this.label18.TabIndex = 26;
-            this.label18.Text = "Реальная дата возврата ";
-            // 
             // WydachaKnig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,7 +596,6 @@ namespace KourseLibraryRV
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;

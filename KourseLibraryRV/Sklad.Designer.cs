@@ -39,18 +39,16 @@ namespace KourseLibraryRV
             this.bookFondBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kourseWorkDataSet = new KourseLibraryRV.KourseWorkDataSet();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.book_FondTableAdapter = new KourseLibraryRV.KourseWorkDataSetTableAdapters.Book_FondTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookFondBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(382, 8);
+            this.label1.Location = new System.Drawing.Point(174, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 13);
             this.label1.TabIndex = 12;
@@ -67,9 +65,9 @@ namespace KourseLibraryRV
             this.howManyDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bookFondBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 24);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(800, 423);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 426);
             this.dataGridView1.TabIndex = 11;
             // 
             // invNBookDataGridViewTextBoxColumn
@@ -108,20 +106,11 @@ namespace KourseLibraryRV
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 10;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(53, 23);
-            this.файлToolStripMenuItem.Text = "Файл";
             // 
             // book_FondTableAdapter
             // 
@@ -141,8 +130,6 @@ namespace KourseLibraryRV
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bookFondBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kourseWorkDataSet)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,7 +140,6 @@ namespace KourseLibraryRV
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private KourseWorkDataSet kourseWorkDataSet;
         private System.Windows.Forms.BindingSource bookFondBindingSource;
         private KourseWorkDataSetTableAdapters.Book_FondTableAdapter book_FondTableAdapter;

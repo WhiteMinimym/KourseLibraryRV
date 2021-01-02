@@ -37,26 +37,34 @@ namespace KourseLibraryRV
         private void button1_Click(object sender, EventArgs e)
         {
 
+            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox1.Text))
+            {
                 SqlCommand command = new SqlCommand(
-             $"INSERT INTO Vudachia (ReadCardNum,InvNBook,LibNBook,DateVudachi,Condition,DateBack,ID_vudachi,RealDateBack) VALUES  (@ReadCardNum,@InvNBook,@LibNBook,@DateVudachi,@Condition,@DateBack,@ID_vudachi,@RealDateBack)" +
+             $"INSERT INTO Vudachia (ReadCardNum,InvNBook,LibNBook,DateVudachi,Condition,DateBack,ID_vudachi,RealDateBack) VALUES  (@ReadCardNum,@InvNBook,@LibNBook,@DateVudachi,@Condition,@DateBack,@ID_vudachi,Null)" +
              $"UPDATE Book_Fond SET HowMany = HowMany - 1 WHERE LibNBook = @LibNBook ", sqlConnection);
 
-            DateTime date = DateTime.Parse(textBox6.Text);
-            DateTime sex = DateTime.Parse(textBox5.Text);
-            DateTime dat = DateTime.Parse(textBox13.Text);
+                DateTime date = DateTime.Parse(textBox6.Text);
+                DateTime sex = DateTime.Parse(textBox5.Text);
 
-            command.Parameters.AddWithValue("ReadCardNum", textBox4.Text);
-            command.Parameters.AddWithValue("InvNBook", textBox3.Text);
-            command.Parameters.AddWithValue("LibNBook", textBox2.Text);
-            command.Parameters.AddWithValue("DateVudachi", $"{sex.Day}/{sex.Month}/{sex.Year}");
-            command.Parameters.AddWithValue("Condition", textBox9.Text);
-            command.Parameters.AddWithValue("DateBack", $"{date.Day}/{date.Month}/{date.Year}");
-            command.Parameters.AddWithValue("ID_vudachi", textBox1.Text);
-            command.Parameters.AddWithValue("RealDateBack", $"{dat.Day}/{dat.Month}/{dat.Year}");
+                command.Parameters.AddWithValue("ReadCardNum", textBox4.Text);
+                command.Parameters.AddWithValue("InvNBook", textBox3.Text);
+                command.Parameters.AddWithValue("LibNBook", textBox2.Text);
+                command.Parameters.AddWithValue("DateVudachi", $"{sex.Day}/{sex.Month}/{sex.Year}");
+                command.Parameters.AddWithValue("Condition", textBox9.Text);
+                command.Parameters.AddWithValue("DateBack", $"{date.Day}/{date.Month}/{date.Year}");
+                command.Parameters.AddWithValue("ID_vudachi", textBox1.Text);
+                MessageBox.Show(command.ExecuteNonQuery().ToString());
+            }
+            else
+            {
+                SqlCommand com = new SqlCommand("$SELECT * FROM Book_Fond WHERE HowMany = '0'", sqlConnection);
 
-            MessageBox.Show(command.ExecuteNonQuery().ToString());
+                MessageBox.Show("Ну нету книги !!!!!!!");
+                Sklad show = new Sklad();
+                show.ShowDialog();
+            }
+           
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             WydachaKnigAdmin show = new WydachaKnigAdmin();
@@ -106,17 +114,12 @@ namespace KourseLibraryRV
 
         }
 
-        private async void button9_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrWhiteSpace(textBox12.Text) &&
-                !string.IsNullOrEmpty(textBox2.Text) && !string.IsNullOrWhiteSpace(textBox2.Text) &&
-                !string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text) &&
-                !string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
-                !string.IsNullOrEmpty(textBox5.Text) && !string.IsNullOrWhiteSpace(textBox5.Text) &&
-                !string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text))
-            {
-                SqlCommand command = new SqlCommand("UPDATE Vudachia SET Condition = '@Condition', RealDateBack = '@RealDateBack' WHERE ID_vudachi = '@IDvudachi' AND LibNBook = '@LibNB', ReadCardNum = '@NReader'" +
-                    "UPDATE Book_Fond SET HowMany = HowMany + 1 WHERE LibNBook = '@LibNB'", sqlConnection);
+           
+                SqlCommand command = new SqlCommand(
+                    $"UPDATE Vudachia SET Condition = '@Condition', RealDateBack = '@RealDateBack' WHERE ID_vudachi = '@IDvudachi' AND LibNBook = '@LibNB', ReadCardNum = '@NReader'" +
+                    $"UPDATE Book_Fond SET HowMany = HowMany + 1 WHERE LibNBook = '@LibNB'", sqlConnection);
 
                 DateTime a = DateTime.Parse(textBox8.Text);
 
@@ -126,10 +129,9 @@ namespace KourseLibraryRV
                 command.Parameters.AddWithValue("Condition", textBox7.Text);
                 command.Parameters.AddWithValue("DateBack", $"{a.Day}/{a.Month}/{a.Year}");
 
+                command.ExecuteNonQuery();
 
-                await command.ExecuteNonQueryAsync();
-
-            }
+            
         }
 
         private void button11_Click(object sender, EventArgs e)
