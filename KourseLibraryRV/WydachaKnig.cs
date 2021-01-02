@@ -41,14 +41,18 @@ namespace KourseLibraryRV
              $"INSERT INTO Vudachia (ReadCardNum,InvNBook,LibNBook,DateVudachi,Condition,DateBack,ID_vudachi,RealDateBack) VALUES  (@ReadCardNum,@InvNBook,@LibNBook,@DateVudachi,@Condition,@DateBack,@ID_vudachi,@RealDateBack)" +
              $"UPDATE Book_Fond SET HowMany = HowMany - 1 WHERE LibNBook = @LibNBook ", sqlConnection);
 
+            DateTime date = DateTime.Parse(textBox6.Text);
+            DateTime sex = DateTime.Parse(textBox5.Text);
+            DateTime dat = DateTime.Parse(textBox13.Text);
+
             command.Parameters.AddWithValue("ReadCardNum", textBox4.Text);
             command.Parameters.AddWithValue("InvNBook", textBox3.Text);
             command.Parameters.AddWithValue("LibNBook", textBox2.Text);
-            command.Parameters.AddWithValue("DateVudachi", textBox5.Text);
+            command.Parameters.AddWithValue("DateVudachi", $"{sex.Day}/{sex.Month}/{sex.Year}");
             command.Parameters.AddWithValue("Condition", textBox9.Text);
-            command.Parameters.AddWithValue("DateBack", textBox6.Text);
+            command.Parameters.AddWithValue("DateBack", $"{date.Day}/{date.Month}/{date.Year}");
             command.Parameters.AddWithValue("ID_vudachi", textBox1.Text);
-            command.Parameters.AddWithValue("RealDateBack", textBox13.Text);
+            command.Parameters.AddWithValue("RealDateBack", $"{dat.Day}/{dat.Month}/{dat.Year}");
 
             MessageBox.Show(command.ExecuteNonQuery().ToString());
         }
@@ -114,11 +118,13 @@ namespace KourseLibraryRV
                 SqlCommand command = new SqlCommand("UPDATE Vudachia SET Condition = '@Condition', RealDateBack = '@RealDateBack' WHERE ID_vudachi = '@IDvudachi' AND LibNBook = '@LibNB', ReadCardNum = '@NReader'" +
                     "UPDATE Book_Fond SET HowMany = HowMany + 1 WHERE LibNBook = '@LibNB'", sqlConnection);
 
+                DateTime a = DateTime.Parse(textBox8.Text);
+
                 command.Parameters.AddWithValue("NReader", textBox12.Text);
                 command.Parameters.AddWithValue("IDvudachi", textBox10.Text);
                 command.Parameters.AddWithValue("LibNB", textBox11.Text);
                 command.Parameters.AddWithValue("Condition", textBox7.Text);
-                command.Parameters.AddWithValue("DateBack", textBox8.Text);
+                command.Parameters.AddWithValue("DateBack", $"{a.Day}/{a.Month}/{a.Year}");
 
 
                 await command.ExecuteNonQueryAsync();
